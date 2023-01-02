@@ -87,7 +87,7 @@ public class CommentController {
 			{
 			Comment existingComment=this.commentRepository.findById(comment.getCommentId()).get();
 			existingComment.setContent(comment.getContent());
-			this.service.addComment(comment);
+			this.service.addComment(existingComment);
 			Map<String,String> response=new HashMap<String,String>();
 			response.put("status", "success");
 			response.put("message", "Comment updated!!");

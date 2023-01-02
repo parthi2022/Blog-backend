@@ -134,9 +134,9 @@ public class PostController {
 	}
 	
 	@GetMapping("/post/search/")
-	public ResponseEntity<?> getPostsByTitle(@RequestParam String postTitle)
+	public ResponseEntity<?> getPostsByTitle(@RequestParam("postTitle") String postTitle)
 	{
-		postTitle=postTitle.toLowerCase();
+		//postTitle=postTitle.toLowerCase();
 		if(this.service.getPostByPostTitle(postTitle).isPresent())
 		{
 			return new ResponseEntity<Post>(this.service.getPostByPostTitle(postTitle).get(),HttpStatus.OK);
